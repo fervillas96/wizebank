@@ -7,7 +7,7 @@ const MobileContainer = styled.div`
   width: 420px;
   min-height: 812px;
   border-radius: 10px;
-  padding: 24px 16px;
+  padding: 24px 26px;
   background-color: #FFFFFF;
 `;
 
