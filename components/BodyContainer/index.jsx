@@ -2,11 +2,11 @@ import React from 'react';
 
 import { MainContainer } from './styled';
 
-const BodyContainer = () => {
+const BodyContainer = ({children}) => {
 
   return (
     <MainContainer>
-      HELLO WORLD
+      {children}
     </MainContainer>
   )
 }

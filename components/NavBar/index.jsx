@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 
 import { IconButton } from '@material-ui/core';
 import MenuOpenIcon from '@material-ui/icons/MenuOpen';

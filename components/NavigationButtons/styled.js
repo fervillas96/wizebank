@@ -1,11 +1,10 @@
 import styled from 'styled-components';
 
 const ButtonsContainer = styled.div`
-  background-color: blue;
-  width: 80%;
+  width: 100%;
   display: flex;
-  justify-content: center;
-  padding: 15px 24px;
+  justify-content: space-between;
+  padding: 15px 0;
 `;
 
 export {
