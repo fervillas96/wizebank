@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 
 const MainContainer = styled.div`
-  background-color: green;
-  width: 80%;
+  width: 100%;
   display: flex;
-  justify-content: center;
-  padding: 15px 24px;
   flex-grow: 1;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 12px 8px;
+  max-height: 650px;
+  overflow: auto;
 `;
 
 export {
