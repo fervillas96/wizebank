@@ -38,7 +38,7 @@ const CategoriesSection = ({ categories, totalSpent }) => {
         {
           categories.map((category) => {
             return (
-              <Category key={`category-${category.name}`} iconColor={category.color}>
+              <Category key={`category-${category.title}`} iconColor={category.color}>
                 <FiberManualRecordIcon  />
                 <CategorieLabel>{category.title}</CategorieLabel> <CategorieAmount>${category.value}</CategorieAmount>
               </Category>

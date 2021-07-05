@@ -8,6 +8,8 @@ import IconIndicatorSection from '@components/IconIndicatorSection'
 import { SectionsContainer } from '@components/Styled/styled'
 import CategoriesSection from '@components/CategoriesSection'
 import InvestmentBotSection from '@components/InvestmentBotSection'
+import CategoriesBudgetSection from '@components/CategoriesBudgetSection'
+
 
 const Home = () => {
   return (  
@@ -26,6 +28,9 @@ const Home = () => {
         </SectionsContainer>
         <SectionsContainer>
           <CategoriesSection/>
+        </SectionsContainer>
+        <SectionsContainer>
+          <CategoriesBudgetSection/>
         </SectionsContainer>
         <SectionsContainer>
           <InvestmentBotSection/>
