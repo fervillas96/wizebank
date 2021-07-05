@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 
 const Card = styled.div`
-    background-color: ${({backgrounColor}) => backgrounColor ? backgrounColor : '#FFF'};
+    background-color: ${({backgroundColor}) => backgroundColor ? backgroundColor : '#FFF'};
     width: ${({fullWidth}) => fullWidth ? '100%' : '42%'};
     flex-direction: ${({isColumn}) => isColumn ? 'column' : 'row' };
-    border-radius: 2px;
+    border-radius: 5px;
     box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;

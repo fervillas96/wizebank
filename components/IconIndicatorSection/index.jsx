@@ -1,9 +1,9 @@
 import React from 'react'
 
 import PropTypes from 'prop-types'
-import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward'
-import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward'
-import { makeStyles } from '@material-ui/core/styles';
+import MoneyOffIcon from '@material-ui/icons/MoneyOff'
+import AttachMoneyIcon from '@material-ui/icons/AttachMoney'
+import { makeStyles } from '@material-ui/core/styles'
 
 import { Card } from '@components/Styled/styled'
 import { 
@@ -28,7 +28,7 @@ const iconStyles = () => {
 
 const IconIndicatorSection = ({ descriptionLabel, quantity }) => {
   const theme = makeStyles(iconStyles)();
-  const isIncome = descriptionLabel === 'income';
+  const isIncome = descriptionLabel === 'Income';
 
   const money = (quantity).toLocaleString('en-US', {
     style: 'currency',
@@ -41,12 +41,12 @@ const IconIndicatorSection = ({ descriptionLabel, quantity }) => {
       <IconContainer>
         {isIncome && (
           <IconBackground>
-            <ArrowUpwardIcon className={theme.income}/>
+            <AttachMoneyIcon className={theme.income}/>
           </IconBackground>
         )}
         { !isIncome &&(
           <IconBackground>
-            <ArrowDownwardIcon className={theme.outcome}/>
+            <MoneyOffIcon className={theme.outcome}/>
           </IconBackground>
         )}
       </IconContainer>
