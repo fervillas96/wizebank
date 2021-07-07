@@ -11,7 +11,7 @@ import InvestmentBotSection from '@components/InvestmentBotSection'
 import CategoriesBudgetSection from '@components/CategoriesBudgetSection'
 
 
-const Home = () => {
+export default function Home() {
   return (  
     <MobileAppContainer>
       <NavBar />
@@ -41,5 +41,3 @@ const Home = () => {
   
   )
 }
-
-export default Home;

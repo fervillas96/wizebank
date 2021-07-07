@@ -23,7 +23,7 @@ const NavigationButtons = () => {
 
   return (
     <ButtonsContainer>
-      <Link href="/bankAccount" passHref>
+      <Link href="/bankAccount/1" passHref>
         <IconButton>
           <AccountBalanceIcon className={theme.greenIcon}/>
         </IconButton>
