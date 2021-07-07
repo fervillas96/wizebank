@@ -5,19 +5,21 @@ import NavigationButtons from '@components/NavigationButtons'
 import { SectionsContainer } from '@components/Styled/styled'
 
 import WelcomeHeader from '@components/WelcomeHeader';
+import CardsSection from '@components/CardsSection'
 
 import { profile } from '../../mocks/bank-profile'
 
 export default function BankAccount(props) {
-
-
-  console.log({ props })
+  const { profile } = props;
   return (  
     <MobileAppContainer>
       <NavBar />
       <BodyContainer>
         <SectionsContainer>
-          <WelcomeHeader/>
+          <WelcomeHeader user={profile.name} totalBalance={profile.totalBalance}/>
+        </SectionsContainer>
+        <SectionsContainer>
+          <CardsSection cards={profile.cards} />          
         </SectionsContainer>
       </BodyContainer> 
       <NavigationButtons />

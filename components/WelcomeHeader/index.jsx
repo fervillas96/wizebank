@@ -14,8 +14,6 @@ import {
   BalanceCol
 } from './styled'
 
-
-
 const styles = () => {
   return {
     userIcon: {
