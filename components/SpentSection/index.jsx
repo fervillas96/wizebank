@@ -10,7 +10,7 @@ const SpentSection = ({totalIncome, spent}) => {
   const moneySpent = (spent).toLocaleString('en-US', {
     style: 'currency',
     currency: 'USD',
-  });
+  }).slice(0, -3);
 
   return (
     <Card fullWidth isColumn>

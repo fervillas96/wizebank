@@ -24,11 +24,13 @@ const DescriptionContainer = styled.div`
 const Label = styled.p`
   font-size: 18px;
   color: #94959D;
-  line-height: 0;
+  line-height: 20px;
+  margin: 0;
 `;
 
 const Number = styled.h3`
-line-height: 0;
+  line-height: 20px;
+  margin: 0;
 `;
 
 export {

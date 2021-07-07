@@ -25,12 +25,14 @@ const DescriptionContainer = styled.div`
 
 
 const Title = styled.h3`
-  line-height: 0px;
+  line-height: 22px;
+  margin: 0;
 `;
 
 const Description = styled.p`
   font-size: 14px;
-  line-height: 0px;
+  line-height: 22px;
+  margin: 0;
 `;
 
 export {

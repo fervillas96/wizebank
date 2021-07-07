@@ -3,14 +3,15 @@ import PropTypes from 'prop-types'
 import { makeStyles } from '@material-ui/core/styles'
 
 import { Card } from '@components/Styled/styled'
-import { Col } from 'react-simple-flex-grid'
 import "react-simple-flex-grid/lib/main.css"
 import FaceIcon from '@material-ui/icons/Face'
 import { 
-  GreetingsMessage, 
-  UserName, 
+  SubTitle,
+  Title, 
   FullWidthRow, 
-  IconCol 
+  IconCol,
+  MessageCol,
+  BalanceCol
 } from './styled'
 
 
@@ -19,29 +20,42 @@ const styles = () => {
   return {
     userIcon: {
       color: '#23695D',
-      height: '80px',
-      width: '80px',
+      height: '50px',
+      width: '50px',
     }
   }
 }
 
-const WelcomeHeader = ({ user }) => {
+const WelcomeHeader = ({ user, totalBalance }) => {
   const theme = makeStyles(styles)();
+
+  const balance = (totalBalance).toLocaleString('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  }).slice(0, -3);
 
   return (
     <Card fullWidth>
       <FullWidthRow>
-        <IconCol span={4}>
+        <IconCol span={2}>
           <FaceIcon className={theme.userIcon}/>
         </IconCol>
-        <Col span={8}>
-          <GreetingsMessage>
+        <MessageCol span={4}>
+          <SubTitle>
             Welcome back,
-          </GreetingsMessage>
-          <UserName>
+          </SubTitle>
+          <Title>
             {user}
-          </UserName>
-        </Col>
+          </Title>
+        </MessageCol>
+        <BalanceCol span={6}>
+          <SubTitle>
+            Total Balance
+          </SubTitle>
+          <Title>
+            {balance}
+          </Title>
+        </BalanceCol>
       </FullWidthRow>
     </Card>
   )
@@ -49,10 +63,12 @@ const WelcomeHeader = ({ user }) => {
 
 WelcomeHeader.propTypes = {
   user: PropTypes.string,
+  totalBalance: PropTypes.number,
 }
 
 WelcomeHeader.defaultProps = {
-  user: 'User'
+  user: 'User',
+  totalBalance: 12000
 }
 
 export default WelcomeHeader

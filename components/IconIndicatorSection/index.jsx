@@ -33,7 +33,7 @@ const IconIndicatorSection = ({ descriptionLabel, quantity }) => {
   const money = (quantity).toLocaleString('en-US', {
     style: 'currency',
     currency: 'USD',
-  });
+  }).slice(0, -3);
 
 
   return (

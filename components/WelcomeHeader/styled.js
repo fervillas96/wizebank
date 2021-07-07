@@ -13,14 +13,30 @@ const IconCol = styled(Col)`
   height: 85px;
 `;
 
-const GreetingsMessage = styled.p`
+const MessageCol = styled(Col)`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 85px;
+`;
+
+const BalanceCol = styled(Col)`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  height: 85px;
+`;
+
+const SubTitle = styled.p`
   color: #c3c3c3;
   font-size: 12px;
   line-height: 16px;
   margin: 0;
 `;
 
-const UserName = styled.h3`
+const Title = styled.h3`
   color: #69a99e;
   font-size: 30px;
   line-height: 22px;
@@ -29,7 +45,9 @@ const UserName = styled.h3`
 
 export {
   FullWidthRow,
-  GreetingsMessage,
-  UserName,
-  IconCol
+  SubTitle,
+  Title,
+  IconCol,
+  MessageCol,
+  BalanceCol,
 }
