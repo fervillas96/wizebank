@@ -4,13 +4,15 @@ import BodyContainer from '@components/BodyContainer'
 import NavigationButtons from '@components/NavigationButtons'
 import { SectionsContainer } from '@components/Styled/styled'
 
-import WelcomeHeader from '@components/WelcomeHeader';
+import WelcomeHeader from '@components/WelcomeHeader'
 import CardsSection from '@components/CardsSection'
+import BudgetSection from '@components/BudgetSection';
 
 import { profile } from '../../mocks/bank-profile'
 
 export default function BankAccount(props) {
   const { profile } = props;
+
   return (  
     <MobileAppContainer>
       <NavBar />
@@ -21,6 +23,13 @@ export default function BankAccount(props) {
         <SectionsContainer>
           <CardsSection cards={profile.cards} />          
         </SectionsContainer>
+        { profile.categories.map((category) => {
+          return (
+            <SectionsContainer key={`category-${category.name}`}>
+              <BudgetSection category={category}/>
+            </SectionsContainer>
+          )
+        })}
       </BodyContainer> 
       <NavigationButtons />
     </MobileAppContainer>
