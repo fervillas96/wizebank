@@ -6,10 +6,10 @@ import AttachMoneyIcon from '@material-ui/icons/AttachMoney'
 import { makeStyles } from '@material-ui/core/styles'
 
 import { Card } from '@components/Styled/styled'
-import { 
-  IconContainer, 
-  DescriptionContainer, 
-  Label, 
+import {
+  IconContainer,
+  DescriptionContainer,
+  Label,
   Number,
   IconBackground,
 } from './styled'
@@ -41,12 +41,12 @@ const IconIndicatorSection = ({ descriptionLabel, quantity }) => {
       <IconContainer>
         {isIncome && (
           <IconBackground>
-            <AttachMoneyIcon className={theme.income}/>
+            <AttachMoneyIcon className={theme.income} />
           </IconBackground>
         )}
-        { !isIncome &&(
+        {!isIncome && (
           <IconBackground>
-            <MoneyOffIcon className={theme.outcome}/>
+            <MoneyOffIcon className={theme.outcome} />
           </IconBackground>
         )}
       </IconContainer>
