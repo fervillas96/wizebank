@@ -1,10 +1,12 @@
 import React from 'react';
 import { MobileContainer } from './styled';
+import { useDarkModeProvider } from '@providers/DarkMode/DarkMode.provider'
 
-const MobileAppContainer = ({children}) => {
+const MobileAppContainer = ({ children }) => {
+  const { darkMode } = useDarkModeProvider()
 
   return (
-    <MobileContainer>
+    <MobileContainer useDarkMode={darkMode}>
       {children}
     </MobileContainer>
   )

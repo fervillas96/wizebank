@@ -2,7 +2,7 @@ import React from 'react';
 
 import { MainContainer } from './styled';
 
-const BodyContainer = ({children}) => {
+const BodyContainer = ({ children }) => {
 
   return (
     <MainContainer>

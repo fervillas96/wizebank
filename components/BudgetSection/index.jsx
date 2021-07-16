@@ -1,13 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { 
+import {
   FullWidthRow,
   CenterCol,
   Name,
   Legend,
   Money,
- } from './styled'
+} from './styled'
 
 import HomeIcon from '@material-ui/icons/Home'
 import DriveEtaIcon from '@material-ui/icons/DriveEta'
@@ -17,16 +17,16 @@ const IconLibrary = (name, color = '#69a99e') => {
   let icon;
   switch (name) {
     case 'food':
-      icon = <FastfoodIcon style={{ color }}/>
+      icon = <FastfoodIcon style={{ color }} />
       break;
     case 'car':
-      icon = <DriveEtaIcon style={{ color }}/>
+      icon = <DriveEtaIcon style={{ color }} />
       break;
     case 'house':
-      icon = <HomeIcon style={{ color }}/>
+      icon = <HomeIcon style={{ color }} />
       break;
     default:
-      icon = <FastfoodIcon style={{ color }}/>
+      icon = <FastfoodIcon style={{ color }} />
       break;
   }
 
@@ -44,7 +44,7 @@ const getColor = (spent, budget) => {
   return budget - spent > 0 ? '#69a99e' : '#d86e72'
 }
 
-const BudgetSection = ({category}) => {
+const BudgetSection = ({ category }) => {
   const { title: name, icon, color, total: budget, value: spent } = category
 
   return (

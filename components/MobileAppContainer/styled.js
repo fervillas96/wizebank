@@ -8,7 +8,7 @@ const MobileContainer = styled.div`
   min-height: 812px;
   border-radius: 10px;
   padding: 24px 26px;
-  background-color: #FFFFFF;
+  background-color: ${({ useDarkMode }) => useDarkMode ? '#f0e8e4' : '#fff'};
 `;
 
 export {
