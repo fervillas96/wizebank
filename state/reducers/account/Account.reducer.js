@@ -1,7 +1,7 @@
 import { ADD_CATEGORY, REMOVE_CATEGORY } from '../../types';
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default (currentState, action) => {
+const AccountReducer = (currentState, action) => {
   switch (action.type) {
     case ADD_CATEGORY:
       return {
@@ -24,4 +24,6 @@ export default (currentState, action) => {
     default:
       return currentState;
   }
-};
+}
+
+export default AccountReducer

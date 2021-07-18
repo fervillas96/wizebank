@@ -10,34 +10,35 @@ import CategoriesSection from '@components/CategoriesSection'
 import InvestmentBotSection from '@components/InvestmentBotSection'
 import CategoriesBudgetSection from '@components/CategoriesBudgetSection'
 
+import { useAccountProvider } from '@providers/Account/Account.provider'
 
-export default function Home() {
-  return (  
+const Home = () => {
+  const { state } = useAccountProvider()
+  return (
     <MobileAppContainer>
       <NavBar />
       <BodyContainer>
         <SectionsContainer>
-          <SpentSection>
-          </SpentSection>
+          <SpentSection totalIncome={state.totalIncome} spent={state.totalSpent} />
         </SectionsContainer>
         <SectionsContainer>
-          <IconIndicatorSection>
-          </IconIndicatorSection>
-          <IconIndicatorSection>
-          </IconIndicatorSection>
+          <IconIndicatorSection descriptionLabel="Income" quantity={state.totalIncome} />
+          <IconIndicatorSection descriptionLabel="Outcome" quantity={state.totalSpent} />
         </SectionsContainer>
         <SectionsContainer>
-          <CategoriesSection/>
+          <CategoriesSection categories={state.categories} totalSpent={state.totalSpent} />
         </SectionsContainer>
         <SectionsContainer>
-          <CategoriesBudgetSection/>
+          <CategoriesBudgetSection categories={state.categories} />
         </SectionsContainer>
         <SectionsContainer>
-          <InvestmentBotSection/>
+          <InvestmentBotSection />
         </SectionsContainer>
       </BodyContainer>
       <NavigationButtons />
     </MobileAppContainer>
-  
+
   )
 }
+
+export default Home
