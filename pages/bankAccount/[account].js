@@ -8,46 +8,31 @@ import WelcomeHeader from '@components/WelcomeHeader'
 import CardsSection from '@components/CardsSection'
 import BudgetSection from '@components/BudgetSection';
 
-import { profile } from '../../mocks/bank-profile'
+import { useAccountProvider } from '@providers/Account/Account.provider'
 
-export default function BankAccount(props) {
-  const { profile } = props;
+export default function BankAccount() {
+  const { state } = useAccountProvider()
 
-  return (  
+  return (
     <MobileAppContainer>
       <NavBar />
       <BodyContainer>
         <SectionsContainer>
-          <WelcomeHeader user={profile.name} totalBalance={profile.totalBalance}/>
+          <WelcomeHeader user={state.name} totalBalance={state.totalBalance} />
         </SectionsContainer>
         <SectionsContainer>
-          <CardsSection cards={profile.cards} />          
+          <CardsSection cards={state.cards} />
         </SectionsContainer>
-        { profile.categories.map((category) => {
+        {state.categories.map((category) => {
           return (
-            <SectionsContainer key={`category-${category.name}`}>
-              <BudgetSection category={category}/>
+            <SectionsContainer key={`category-${category.name}${Math.random()}`}>
+              <BudgetSection category={category} />
             </SectionsContainer>
           )
         })}
-      </BodyContainer> 
+      </BodyContainer>
       <NavigationButtons />
     </MobileAppContainer>
-  
+
   )
-}
-
-export async function getStaticPaths() {
-  return {
-    paths: ['/bankAccount/1'],
-    fallback: false
-  }
-}
-
-export async function getStaticProps() {
-  return {
-    props: {
-      profile: profile
-    }
-  }
 }

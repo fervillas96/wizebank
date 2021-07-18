@@ -22,7 +22,7 @@ const StyledSwitch = withStyles({
 
 const ToggleSection = ({ onChange, label, value }) => {
   return (
-    <Card>
+    <Card fullWidth>
       <Label>{label}</Label>
       <StyledSwitch checked={value} onChange={() => onChange(value)} name={`toggle-${value}`} />
     </Card>

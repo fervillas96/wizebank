@@ -1,10 +1,13 @@
-import React from 'react';
+import React from 'react'
 
-import { IconButton } from '@material-ui/core';
-import MenuOpenIcon from '@material-ui/icons/MenuOpen';
-import InfoIcon from '@material-ui/icons/Info';
-import { makeStyles } from '@material-ui/core/styles';
-import { NavBarContainer, Logo, LogoContainer } from './styled';
+import { Backdrop } from '@material-ui/core'
+import { IconButton } from '@material-ui/core'
+import Modal from '@material-ui/core/Modal'
+import MenuOpenIcon from '@material-ui/icons/MenuOpen'
+import AddIcon from '@material-ui/icons/Add'
+import { makeStyles } from '@material-ui/core/styles'
+import { NavBarContainer, Logo, LogoContainer } from './styled'
+import AddCategoryModal from '@components/AddCategoryModal'
 
 const iconStyles = () => {
   return {
@@ -17,16 +20,38 @@ const iconStyles = () => {
 const NavBar = () => {
   const theme = makeStyles(iconStyles)();
 
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <NavBarContainer>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+        BackdropProps={{
+          timeout: 500,
+        }}
+      >
+        <AddCategoryModal />
+      </Modal>
       <IconButton>
-        <MenuOpenIcon className={theme.greenIcon}/>
+        <MenuOpenIcon className={theme.greenIcon} />
       </IconButton>
       <LogoContainer>
-        <Logo src='/favicon.ico'/> WizeBank!
+        <Logo src='/favicon.ico' /> WizeBank!
       </LogoContainer>
-      <IconButton target="_blank" href="http://www.wizeline.com/">
-        <InfoIcon className={theme.greenIcon}/>
+      <IconButton onClick={handleOpen}>
+        <AddIcon className={theme.greenIcon} />
       </IconButton>
     </NavBarContainer>
   );
