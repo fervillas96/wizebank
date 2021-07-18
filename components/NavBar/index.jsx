@@ -42,7 +42,7 @@ const NavBar = () => {
           timeout: 500,
         }}
       >
-        <AddCategoryModal />
+        <AddCategoryModal handleClose={handleClose} />
       </Modal>
       <IconButton>
         <MenuOpenIcon className={theme.greenIcon} />
